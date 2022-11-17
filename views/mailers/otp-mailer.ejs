@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .mail-container{
+            width: 100vw;
+            margin: auto;
+            background-color: black;
+            color: #ffcff1;
+            border: 2px solid red;
+        }
+        .header{
+            width: 100%;
+            height: 50px ;
+            font-size: 1.2rem;
+            font-family: monospace;
+            text-align: center;
+            color: #ffcff1;
+        }
+        .message-box{
+            font-family: cursive;
+            font-size: 1rem;
+            margin-top: 5px;
+            width: 100%;
+            text-align: center;
+        }
+        .email-content{
+            width: 98%;
+            padding: 5%;
+            box-sizing: border-box;
+            font-size: 0.9rem;
+            font-family: monospace;
+            color: #ee9b00;
+        }
+    </style>
+</head>
+<body>
+    
+<div class="mail-container">
+    <div class="header">
+        <a><h1>Cloud Connect</h1></a>
+    </div>
+
+    <div class="message-box">
+        "A one stop solution to fight Covid-19".
+    </div>
+    <div class="email-content">
+        Hii👋🏻<br><br>
+
+        Your One Time Password is: <%= otp%><br><br>
+
+
+    </div>
+</div>
+    
+</body>
+</html>

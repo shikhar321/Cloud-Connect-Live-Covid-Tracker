@@ -1,0 +1,32 @@
+<div id="notification-bar" >
+    <h1 id="notification-heading">
+        <i class="fas fa-bell-on"></i> &nbsp; Notifications 
+    </h1>
+
+    <button id="close-noti-bar">
+        <i class="fas fa-times fa-2x"></i>
+    </button>
+
+    <div id="noti-area">
+        
+        <% for(let noti of notis){%>
+            <div class="notification">
+                <i class="fas fa-exclamation " style="color:red ; "></i> 
+                <%if(noti.type == "Report"){%>
+                    <span class="noti-content" style="color: red">
+                        <%= noti.content%>
+                    </span>
+                <%}else{%>
+                    <span class="noti-content">
+                        <%= noti.content%>
+                    </span>
+                <%}%>
+                <br><br>
+                <div class="timestamp">
+                    <%= noti.timestamp%>
+                </div>
+            </div>    
+        <%}%>
+
+    </div>
+</div>

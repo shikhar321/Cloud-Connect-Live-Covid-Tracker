@@ -1,0 +1,93 @@
+#svgMap{
+    position: relative;
+    top: 100px ; left: 10px;
+    border-radius: 50px;
+    overflow: hidden;
+    height: 460px ; 
+    width: 76vw; 
+}
+.heading{
+    margin-bottom: 30px;
+    color: white;
+    font-size: 4rem;
+    font-family: monospace;
+}
+#news-container{
+    width: 76vw; 
+    height: auto ; 
+    border-radius: 50px;
+    background-color: #023047;
+    position: relative;
+    top: 100px ;
+    left: 10px;
+    text-align: center;
+    
+}
+#new-main-container{
+    display: flex ; 
+    flex-wrap: wrap;
+    justify-content: center; 
+    align-items: center;
+    font-size: 3.6rem;
+    font-family: monospace;
+    font-weight: 900;
+    color: black;
+    img{
+        width: 50px;
+        height: 50px
+    }
+}
+
+.latest-news-card{
+    width: 40%;
+    height: 300px ; 
+    font-size: 1rem ; 
+    background-color: black;
+    cursor: pointer;
+    margin-bottom: 20px;
+    border-radius: 20px;
+    padding: 10px; 
+    margin-left: 10px;  
+    position: relative; 
+}
+#loader-anime{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2rem;
+    color: white;
+}
+.latest-news-card-heading{
+    width: 100%;
+    height: 60px ; 
+    overflow: hidden;
+    text-align: center;
+    font-size: 1.12rem;
+    color: #ffb703;
+    font-weight: 900;
+}
+.latest-news-card-content{
+    width: 90%;
+    height: 200px;
+    text-align: justify;
+    margin: auto;
+    margin-top: 10px; margin-bottom: 10px;
+    padding: 10px;
+    background-color: whitesmoke;
+    color: black;
+    border-radius: 20px;
+    
+}
+.real-link{
+    color: red;
+    position: absolute ; 
+    width: 300px;
+    bottom: 20px; right: 20px;
+}
+.sign-out-button , .goto-home-button{
+    top: -25px;
+    right: -90px;
+}
+.goto-home-button{
+    right: 40px;
+}

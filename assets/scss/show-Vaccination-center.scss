@@ -1,0 +1,105 @@
+.show-vaccination-center-section{
+    height: auto ; 
+    width: 76vw; 
+    border-radius: 50px ;
+    position: relative;
+    top: 120px; left: 10px;
+    background-color: #023047;
+}
+.show-vac-heading{
+    width: 100%; 
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 3rem;
+    text-align: center;
+    color: white;
+}
+.search-section{
+    width: 100%;
+    text-align: center;
+}
+#input-field-pinCode{
+    height: 32px;
+    width: 400px;
+    position: relative;
+    top: 3px;
+    margin-right: 10px;
+    margin-bottom: 20px;
+}
+#area-for-vaccination-center-detail{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+.loader-anime{
+    height: 80px ; 
+    width: 80px ;
+    position: relative;
+    left: -20px;
+}
+.load-text{
+    font-size: 4rem;
+    font-family: monospace;
+    font-weight: 900; 
+    color: black;
+    position: relative;
+    top: 12px;
+    display: none;
+}
+
+.vac-center-cards{
+    width: 45%; 
+    height: auto ;
+    border-radius: 20px;
+    margin-left: 20px;
+    margin-bottom: 20px;
+    background-color: black;
+}
+.center-name{
+    margin: auto;
+    margin-top: 5px;
+    border-radius: 10px;
+    height: 50px ;
+    width: 90%; 
+    text-align: center;
+    color: #fca311 ; 
+    font-family: monospace;
+    font-size: 2rem;
+    font-weight: 900;
+    overflow: hidden;
+}
+.center-details{
+    width: 90%;
+    padding-left: 20px;
+    text-align: left;
+    font-family: monospace;
+    font-size: 1.3rem;
+    font-weight: 900;
+    background-color: whitesmoke;
+    margin: auto ; 
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border-radius: 20px;
+}
+.key{
+    color: #fca311;
+}
+.value{
+    color: black;
+}
+#image-for-start{
+    width: 80%;
+    height: 500px ; 
+    border-radius: 50px;
+}
+.sign-out-button , .goto-home-button{
+    top: -25px;
+    right: -90px;
+}
+.goto-home-button{
+    right: 40px;
+}

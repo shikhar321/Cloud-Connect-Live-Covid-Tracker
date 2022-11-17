@@ -1,0 +1,28 @@
+<div class="header-for-user-profile">
+    <a id="Web-logo" href="/users/home-page">
+        <i class="fad fa-moon-cloud fa-4x" id="cloud-connect-logo" aria-hidden="true"></i>
+        <p id="cloud-connect-name">Cloud Connect.</p>
+    </a>
+    <p>
+        <a href="/users/home-page">
+            CloudConnect
+        </a>
+    </p>
+    <div>
+        <a href="/users/sign-out" >
+            <button class="sign-out-button">
+                <i class="fas fa-sign-out"></i> &nbsp; Sign-Out 
+            </button>
+        </a>
+        <a href="/users/profile/<%= user._id%>" >
+            <button class="goto-home-button">
+                <i class="fas fa-user"></i>&nbsp; Profile 
+            </button>
+        </a>    
+        <div >
+            <img src="https://cdn-icons-png.flaticon.com/128/1156/1156949.png" id="notification-button">
+            
+        </div>
+    </div>
+    
+</div>

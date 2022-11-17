@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= user.name%> | CloudConnect
+    </title>
+    
+
+    <link rel="shorcut icon" type="image/x-icon" href="../images/fevion.png">
+
+    
+    <script src="https://kit.fontawesome.com/22406f9d4d.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+
+    <link href="https://cdn.staticaly.com/gh/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.css">
+    <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.css"> 
+    <link rel="stylesheet" type="text/css" href="/css/user.css"> 
+
+</head>
+<body>
+
+    
+    <script>
+        <% if(flash.success && flash.success.length > 0){%>
+            new Noty({
+                theme: 'semanticui' , 
+                text: "<%= flash.success%>" , 
+                type : "success" , 
+                layout : "topRight" , 
+                timeout : 1500 
+            }).show() 
+        <%}%>
+        <% if(flash.error && flash.error.length > 0){%>
+            new Noty({
+                theme: 'semanticui' , 
+                text: "<%= flash.error%>" , 
+                type : "error" , 
+                layout : "topRight" , 
+                timeout : 1500 
+            }).show() 
+        <%}%>
+    </script>
+
+    <div class="header-for-user-profile">
+        <a id="Web-logo" href="/users/home-page">
+            <i class="fad fa-moon-cloud fa-4x" id="cloud-connect-logo" aria-hidden="true"></i>
+            <p id="cloud-connect-name">Cloud Connect.</p>
+        </a>
+        <p>
+            <a href="/users/home-page">
+                CloudConnect
+            </a>
+        </p>
+        <div>
+            <a href="/users/sign-out" >
+                <button class="sign-out-button">
+                    <i class="fas fa-sign-out"></i> &nbsp; Sign-Out 
+                </button>
+            </a>
+            <a href="/users/home-page" >
+                <button class="goto-home-button">
+                    <i class="fas fa-home"></i>&nbsp; Home 
+                </button>
+            </a>
+        </div>
+    </div>
+
+    <div class="profile-constainer">
+        <div class="profile-photo">
+            <%if(targetUser.avatar){%>
+                <img src="<%= targetUser.avatar%>" alt="<%= targetUser.name%>" height="100%" width="100%"> 
+            <%}else{%>
+                <img src="/images/dummy_userr.jpg" height="100%" width="100%">
+            <%}%>
+        </div> 
+    
+        <div class="personal-info-container">
+            <p class="user-name">
+                <i class="fas fa-user-alt"></i>&nbsp; <%= targetUser.name%>
+            </p>
+            <p class="user-email">
+                <i class="fas fa-envelope"></i>&emsp; <%= targetUser.email%> 
+            </p>
+
+            <div class="about-yourself-container" style="white-space: pre-line;">
+                <%= targetUser.personlInfo%>
+            </div>
+            <% if(locals.user.id == targetUser.id){%>
+                <button type="button" class="create-post-button">
+                    <i class="fas fa-sort-down fa-2x" style="position: relative; top: -5px;"></i>&nbsp; Create Post
+                </button>
+                <button type="button" class="add-about-yourself">
+                    <i class="fas fa-edit " style="position: relative;"></i>&nbsp; Bio
+        
+                </button>
+            <%}%>
+            
+        </div>
+    </div>
+    <% if(locals.user.id == targetUser.id){%>
+        <form class="create-post-form" id = "create-post" method="POST" action="/posts/create-post" data-isAllJsNeeded = "true" enctype="multipart/form-data">
+            <label for="title">Give Title of Post  </label>
+            <br>
+            <input required id="title" name="title" placeholder="Add Title" maxlength="80" class="emoji-also-there">
+            <br><br>
+            <label for="postDescription">Describe Post  </label>
+            <br>
+            <textarea required id="postDescription" name="postDescription" placeholder="Describe post." class="emoji-also-there"></textarea>
+            <br><br><br><br>
+            <input type="file" name="postImages" placeholder="Images" multiple>
+            <br><br>
+            <button type="submit" class="create-post-button remove-pos" id="submit-btn">
+                <i class="fas fa-plus " ></i>&nbsp; Create Post
+            </button>
+        </form>
+        
+        <form class="add-about-yourself-form" action="/users/add-bio/<%= user._id%>" method="POST" enctype="multipart/form-data">
+            <label for="title">Tell others about yourself  </label>
+            <br>
+            <textarea maxlength="2000" name="Bio" class="emoji-also-there"></textarea>
+            <br><br><br><br>
+
+            <input type="file" name="avatar" placeholder="Profile Picture" id="avatar">
+            <button type="submit" class="add-about-yourself remove-pos">
+                <i class="fas fa-edit " style="position: relative;"></i>&nbsp; Save 
+            </button>
+        </form>
+    <%}else{%>
+        <form class="create-post-form" method="POST" action="/posts/create-post" data-q = "false">
+            <label for="title">Give Title of Post  </label>
+            <br>
+            <input required id="title" name="title" placeholder="Add Title" maxlength="40">
+            <br><br>
+            <label for="postDescription">Describe Post  </label>
+            <br>
+            <textarea required id="postDescription" name="postDescription" placeholder="Describe post."></textarea>
+            <br><br>
+            <button type="submit" class="create-post-button remove-pos">
+                <i class="fas fa-plus " ></i>&nbsp; Create Post
+            </button>
+        </form>
+        
+        <form class="add-about-yourself-form" action="/users/add-bio/<%= user._id%>">
+            <label for="title">Tell others about yourself  </label>
+            <br>
+            <textarea maxlength="2000" name="aboutUser"></textarea>
+    
+            <button type="submit" class="add-about-yourself remove-pos">
+                <i class="fas fa-edit " style="position: relative;"></i>&nbsp; Save
+                
+            </button>
+        </form>
+    <%}%>
+    <div class="show-post-comment-buttons">
+        <div class="show-post-button">
+            Posts
+        </div>
+        <div class="show-comment-button">
+            Comments
+        </div>
+    </div>
+        <%- include("postUP") -%>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/emojionearea/3.4.2/emojionearea.min.js"></script>
+
+    <script>
+       $(".emoji-also-there").emojioneArea({
+            pickerPosition : "bottom" , 
+            preserveDefault: true 
+        })
+        $(".emoji-comment-also-there").emojioneArea({
+            pickerPosition : "top" 
+        })
+
+       
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="/js/userJS.js"></script>
+     
+</body>
+</html>

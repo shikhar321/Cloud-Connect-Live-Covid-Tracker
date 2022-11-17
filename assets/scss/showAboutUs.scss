@@ -1,0 +1,83 @@
+a{
+    text-decoration: none;
+}
+.about-section{
+    width: 76vw ; 
+    height: auto ; 
+    background: linear-gradient(to bottom left , #0096c7 , #b5179e);
+    position: relative;
+    padding-top: 20px;
+    padding-bottom: 40px;
+    top: 100px; left: 10px;
+    position: relative;
+    border-radius: 50px;
+}
+.creator-card-section{
+    display: flex;
+    justify-content: space-around;
+}
+
+.description-card{
+    height: 370px ; 
+    width: 220px ;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.creater-image{
+    height: 150px ; 
+    width: 150px;
+    border-radius: 100px;
+    border: 2px solid #023047;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.creater-name{
+    font-family: monospace;
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-top: 10px;
+    color: #4895ef;
+}
+.creater-skills{
+    font-family: monospace;
+    width: 98%;
+    font-size: 0.6rem;
+    text-align: center;
+    margin-top: 10px;
+}
+.creater-pd{
+    width: 90%;
+    font-family: monospace;
+    font-size: 0.75rem;
+    margin-top: 10px;
+    margin-left: 10px ;
+    margin-bottom: 10px;
+    font-weight: 900;
+    color: #003566;
+}
+.social-links{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.about-description{
+    width: 90%;
+    margin: auto;
+    font-family: monospace;
+    font-weight: 900;
+    font-size: 1.3rem;
+    text-align: justify;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    color: white;
+}
+.sign-out-button , .goto-home-button{
+    top: -25px;
+    right: -90px;
+}
+.goto-home-button{
+    right: 40px;
+}

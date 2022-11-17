@@ -1,0 +1,134 @@
+<div class="comment-post-slider">
+    
+    <div class="move-up-whole" id="post-section">
+        <%if(posts.length == 0 ){%>
+            <p style="font-family: monospace; font-weight: 900; color: red; font-size: 2rem;">
+                No post Availbale.
+            </p>
+        <%}%>
+        <% for(let post of posts){%>
+            <div class="modify-when-needed" id = "post-<%= post._id%>">
+                <%if(isHome == true){%>
+                    <div class="user-profile-link">
+                        <a href="/users/profile/<%= post.user._id%>">
+                            <i class="fas fa-user-circle"></i>&nbsp; 
+                            <%= post.user.name%>
+                        </a>
+                    </div>
+                <%}%>
+    
+                <div class="post-card">
+                    <div class="post-image">
+                        <%if(post.postImages.length == 0 ){%>
+                            <img src="/images/dummy.png" height="100%" width="100%">
+                        <%}else{%>
+                                <i class="fas fa-angle-left fa-3x slide-image-left"></i>
+                                <i class="fas fa-angle-right fa-3x slide-image-right" ></i>
+                            <div class="large-image-box" data-imageNumber="<%= post.postImages.length%>">
+                                <%for(image of post.postImages){%>
+                                    <img src="<%=image%>" height="100%" width="100%" class="image-screen" >
+                                <%}%>
+                            </div> 
+                        <%}%>
+                    </div>
+                    <div class="post-info-part">
+                        <div class="post-heading">
+                            <%= post.title%>
+                        </div>
+                        <div class="post-description" style="white-space: pre-line;" >
+                            <%= post.postDescription%>
+                        </div>
+                    </div>
+                    <div class="post-buttons">
+                        <a href="/posts/toggle-like-post/<%= post.id%>" style="color: white" class="like"  id = "like-<%= post._id%>">
+                            <%for(let i = 0 ; i <= post.likes.length ; i += 1){%>
+                                <%if(i == post.likes.length){%>
+                                    <i class="far fa-thumbs-up fa-2x"></i>
+                                    <%break ;%>
+                                <%}%>
+                                <%if(locals.user.id == post.likes[i]){%>
+                                    <i class="fas fa-thumbs-up fa-2x"></i>
+                                    <%break ;%>
+                                <%}%>
+                            <%}%>
+                            <font><%= post.likes.length%> </font>
+                        </a>
+                        <a href="/posts/toggle-dislike-post/<%= post.id%>" style="color: white;" class="dislike"  id = "dislike-<%= post._id%>">
+                            <%for(let i = 0 ; i <= post.dislikes.length ; i += 1){%>
+                                <%if(i == post.dislikes.length){%>
+                                    <i class="far fa-thumbs-down fa-2x"></i>
+                                    <%break ;%>
+                                <%}%>
+                                <%if(locals.user.id == post.dislikes[i]){%>
+                                    <i class="fas fa-thumbs-down fa-2x"></i>
+                                    <%break ;%>
+                                <%}%>
+                            <%}%>
+                            <font><%= post.dislikes.length%> </font>
+                        </a>
+                        <div class="view-comment-section" id="comments-<%=post._id%>">
+                            <i class="far fa-comment-alt fa-2x"></i>
+                            <font><%= post.comments.length%></font>
+                        </div>
+        
+                        <% if(locals.user && locals.user.id == post.user.id){%>
+                            <a class="delete-button" href="/posts/delete-post/<%= post._id %>" >
+                                <i class="fas fa-trash-alt fa-2x"></i>
+                            </a>
+                        <%}%>
+                    </div>
+                </div>
+                <div>
+                    <form method="POST" action="/posts/create-comments" class="comment-box">
+                        <label for="comment"><i class="fas fa-2x fa-comment-alt"></i></label>
+                        <input placeholder="Type here to Comment" type="text" maxlength="200" name="comment" id="comment" class="emoji-comment-also-there">
+                        <input type="hidden" value="<%= post._id%>" name="postID">
+                        <button class="comment-button"><i class="fas fa-pencil"></i> &nbsp;Comment</button>
+                    </form>
+                </div>
+                <div class="comment-section">
+                    <h1>
+                        Comments.
+                    </h1>
+                <div id = "comment-area-<%=post._id%>">
+                    
+                    <%if(post.comments.length == 0){%>
+                        <h2 class="no-comments-heading">
+                            No Comments Available.
+                        </h2>
+                    <%}%>
+                </div>
+                    
+                </div>
+            </div>
+        <%}%>
+    </div>
+
+
+    <div class="comment-main-card">
+        <%if(allComments.length == 0 ){%>
+            <p style="color: red; font-family: monospace; font-size: 2rem; font-weight: 900;">
+                No Comments Availbale.
+            </p>
+        <%}%>
+        <% for(let comment of allComments){%>
+            <div class="comment-card" >
+                <div class="comment-creater">
+                    <i class="fas fa-user-circle"></i> <%= comment.user.name%>
+                </div><br>
+                <div class="comment">
+                   <%= comment.content%>
+                </div>
+                <div class="comment-main-date">
+                    <%= comment.user.createdAt%>
+                </div>
+                <% if(locals.user && locals.user.id == comment.user.id){%>
+                    <a class="delete-button-comments" href="/posts/delete-comment/<%= comment._id %>" >
+                        <i class="fas fa-trash-alt "></i>
+                    </a>
+                <%}%>
+            </div>
+            
+        <%}%>
+    </div>
+</div>

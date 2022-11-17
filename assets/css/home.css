@@ -1,0 +1,300 @@
+body {
+  background-color: #97c4fc; }
+
+.txt-center {
+  text-align: center; }
+
+#container {
+  margin-top: 4vh;
+  width: 98vw;
+  height: 90vh;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center; }
+
+#image-container {
+  height: 80%;
+  width: 45%;
+  border-radius: 600px;
+  overflow: hidden; }
+
+#form-container {
+  background-color: #FED99B;
+  height: auto;
+  width: 40%;
+  border: 1px solid #adb5bd;
+  box-shadow: 0px 0px 10px 0px #adb5bd;
+  border-radius: 30px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 30px; }
+
+#form-heading {
+  position: absolute;
+  display: flex;
+  justify-content: space-between;
+  top: 5px;
+  padding: 10px;
+  display: flex;
+  height: 100px;
+  width: 100%;
+  box-sizing: border-box; }
+
+#Web-logo {
+  width: 20%; }
+
+#cloud-connect-logo {
+  color: #371a45; }
+
+#cloud-connect-name {
+  position: relative;
+  top: -20px;
+  font-family: Papyrus;
+  font-weight: 900;
+  font-size: 0.6rem; }
+
+#Web-message {
+  display: flex;
+  align-items: center;
+  font-family: monospace;
+  width: 80%;
+  font-size: 1rem;
+  font-weight: 900;
+  color: #371a45; }
+
+.welcome-heading {
+  font-family: monospace;
+  font-weight: 900;
+  color: white;
+  position: relative;
+  top: 100px; }
+
+#who-are-u {
+  margin-top: 100px;
+  position: relative;
+  top: 50px;
+  margin-bottom: 100px; }
+
+#who-are-u a {
+  text-decoration: none;
+  font-size: 1.2rem;
+  font-family: monospace;
+  font-weight: 900;
+  color: #065a60; }
+
+#sign-in-heading {
+  position: relative;
+  top: 60px;
+  font-size: 2.2rem;
+  font-family: monospace;
+  font-weight: 900;
+  color: white; }
+
+#sign-in-form {
+  position: relative;
+  top: 20px;
+  position: relative;
+  width: 100%; }
+
+#sign-in-form input {
+  position: relative;
+  left: 20px;
+  top: 5px;
+  outline: none;
+  border: none;
+  width: 90%;
+  padding: 10px;
+  border-bottom: 4px solid #ff6d00;
+  background-color: transparent;
+  font-family: monospace;
+  font-size: 1.25rem;
+  font-weight: 900;
+  margin-bottom: 30px; }
+
+#sign-in-form label {
+  position: relative;
+  left: 20px;
+  font-family: monospace;
+  font-weight: 900;
+  color: #0c090d; }
+
+#sign-in-form label font {
+  font-size: 1.09rem; }
+
+#sign-in-form input:focus {
+  background-color: #ff6d00;
+  border-radius: 10px;
+  color: white; }
+
+#sign-in-form input::-webkit-input-placeholder {
+  color: white; }
+
+#btn-log-in {
+  background-color: #fef9ef;
+  color: #0a9396;
+  font-family: monospace;
+  font-size: 1.5rem;
+  font-weight: 900;
+  border: none;
+  border-radius: 10px;
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  position: relative;
+  margin-bottom: 60px;
+  margin-right: 30px;
+  margin-left: 20px; }
+
+#btn-log-in:hover {
+  background-color: #f0ead2; }
+
+#sign-in-question {
+  text-decoration: none;
+  font-family: monospace;
+  font-size: 1rem;
+  font-weight: 900;
+  position: relative;
+  color: #065a60;
+  text-align: center; }
+
+#sign-up-heading {
+  font-size: 2.2rem;
+  font-family: monospace;
+  font-weight: 900;
+  color: white;
+  position: relative;
+  top: -50px; }
+
+.show-password-button {
+  cursor: pointer;
+  color: #46494c;
+  margin-left: 40px;
+  position: relative;
+  top: 15px; }
+
+#copy-right {
+  color: #0096c7;
+  position: absolute;
+  bottom: 2px;
+  right: 10px; }
+
+#copy-right span {
+  font-size: 1.2rem;
+  font-weight: 900;
+  font-family: monospace;
+  position: relative;
+  top: -5px; }
+
+.go-back {
+  position: absolute;
+  top: 10px;
+  right: 20px; }
+
+.report-button {
+  position: absolute;
+  right: 10px; }
+
+@media screen and (max-width: 1100px) {
+  #container {
+    width: 100vw; }
+  #form-container {
+    width: 45%; }
+  #image-container {
+    width: 50%; } }
+
+@media screen and (max-width: 920px) {
+  body {
+    background: url("./back2.png");
+    background-size: contain; }
+  #image-container {
+    display: none; }
+  #container {
+    position: relative;
+    left: 1.1vw;
+    margin-top: -2vh; }
+  #form-container {
+    width: 70%;
+    background-color: #669bbc;
+    opacity: 0.95;
+    box-shadow: 0px 0px 30px 00px black; }
+  #cloud-connect-logo {
+    color: white; }
+  #cloud-connect-name {
+    top: -15px;
+    color: white; }
+  #Web-message {
+    position: relative;
+    color: black;
+    top: -1vh; }
+  #sign-in-question {
+    color: #f5cb5c; }
+  #who-are-u a {
+    color: #f5cb5c; }
+  #copy-right {
+    color: white; } }
+
+@media screen and (max-width: 765px) {
+  #form-container {
+    width: 70%; } }
+
+@media screen and (max-width: 660px) {
+  #form-container {
+    width: 80%; } }
+
+@media screen and (max-width: 575px) {
+  #form-container {
+    width: 85%; } }
+
+@media screen and (max-width: 545px) {
+  #form-container {
+    width: 90%; } }
+
+@media screen and (max-width: 420px) {
+  body {
+    background: url("./back2.png");
+    background-size: contain; }
+  #container {
+    left: -1.1vw;
+    margin-top: -1vh; }
+  #form-container {
+    background-color: #669bbc;
+    opacity: 0.95;
+    box-shadow: 0px 0px 30px 00px black; }
+  #cloud-connect-logo {
+    color: white;
+    font-size: 3rem; }
+  #cloud-connect-name {
+    top: -15px;
+    font-size: 0.5rem;
+    color: white; }
+  #Web-message {
+    font-size: 0.9rem;
+    position: relative;
+    color: black;
+    top: -1vh; }
+  #sign-in-heading {
+    font-size: 1.5rem; }
+  #sign-in-form {
+    left: -3%;
+    top: 40px; }
+  #sign-in-question {
+    font-size: 0.7rem;
+    color: #f5cb5c; }
+  #who-are-u a {
+    color: #f5cb5c; }
+  #sign-in-form input {
+    width: 85%;
+    font-size: 1rem; }
+  #btn-log-in {
+    font-size: 0.9rem;
+    width: 120px;
+    height: 40px; }
+  #copy-right {
+    bottom: 0px;
+    font-size: 0.7rem;
+    color: white; }
+    #copy-right span {
+      font-size: 0.9rem; }
+  .welcome-heading {
+    font-size: 0.7rem; } }

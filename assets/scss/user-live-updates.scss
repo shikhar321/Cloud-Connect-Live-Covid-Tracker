@@ -1,0 +1,90 @@
+.section-of-live-updates{
+    border: 2px solid white; 
+    height: auto ; 
+    width: 76vw;
+    position: relative;
+    top: 100px;
+    left: 10px;
+    background-color: white;
+    border-radius: 50px;
+}
+.live-updates-heading{
+    width: 100%;
+    text-align: center;    
+    font-family: monospace;
+    font-size: 3rem;
+    font-weight: 900;
+    color: black;
+}
+.Live-overall-updates{ 
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    margin-top: 30px;
+}
+.Update-heading{
+    border-radius: 10px;
+    height: 120px ; 
+    width: 200px ;
+   
+}
+.heading{
+    height: 50% ; 
+    width: 100% ; 
+    text-align: center;
+    font-family: monospace;
+    font-weight: 900; 
+    font-size: 2rem;
+    
+}
+.live-value{
+    font-size: 1.5rem;
+    font-family: monospace;
+    height: 50% ; 
+    width: 100%;
+    position: relative;
+    top: -20px;
+    text-align: center; 
+}
+.loading-anime{
+    height: 50px ; 
+    width: 50px;
+    position: relative;
+}
+#table-for-live-updates{
+    position: relative;
+    width: 800px;
+    margin: auto;
+    font-family: monospace;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+}
+.table-heading{
+    width: 100%;
+    text-align: center;
+    font-family: monospace;
+    font-size: 3rem; 
+    font-weight: 900 ;
+    color: white;
+}
+.input-field{
+    width: 100%;
+    text-align: center;
+    margin: auto;
+}
+#filter-for-Covid-cases{
+    height: 32px ;
+    width:400px;
+    position: relative;
+    top: 3px;
+    margin-right: 10px;
+}
+.sign-out-button , .goto-home-button{
+    top: -25px;
+    right: -90px;
+}
+.goto-home-button{
+    right: 40px;
+}

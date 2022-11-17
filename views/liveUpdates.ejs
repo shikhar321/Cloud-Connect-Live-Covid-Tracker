@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Live Updates | CloudConnect</title>
+    
+
+    <link rel="shorcut icon" type="image/x-icon" href="../images/fevion.png">
+ 
+    
+    <script src="https://kit.fontawesome.com/22406f9d4d.js" crossorigin="anonymous"></script>
+    <link href="https://cdn.staticaly.com/gh/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="/css/user.css"> 
+    <link rel="stylesheet" type="text/css" href="/css/user-home.css"> 
+    <link rel="stylesheet" type="text/css" href="/css/user-live-updates.css"> 
+</head>
+<body>
+    
+
+    <div class="header-for-user-profile">
+        <a id="Web-logo" href="/users/home-page">
+            <i class="fad fa-moon-cloud fa-4x" id="cloud-connect-logo" aria-hidden="true"></i>
+            <p id="cloud-connect-name">Cloud Connect.</p>
+        </a>
+        <p>
+            <a href="/users/home-page">
+                CloudConnect
+            </a>
+        </p>
+        <div>
+            <a href="/users/sign-out" >
+                <button class="sign-out-button">
+                    <i class="fas fa-sign-out"></i> &nbsp; Sign-Out 
+                </button>
+            </a>
+            <a href="/users/home-page" >
+                <button class="goto-home-button">
+                    <i class="fas fa-home"></i>&nbsp; Home 
+                </button>
+            </a>
+        </div>
+    </div>
+
+
+
+
+
+
+   <%- include("asideSection")-%>
+
+    <div class="section-of-live-updates">
+        <div class="live-updates-heading">
+            Live Covid Updates...
+        </div>
+        <div class="Live-overall-updates">
+            <div class="Update-heading" style="color:#ee9b00;">
+                <div class="heading" >
+                    Confirmed
+                </div>
+                <div id="Confirmed" class="live-value">
+                    Loading<img src="/images/spinner-yellow.gif" class="loading-anime">
+                </div>
+            </div>
+            <div class="Update-heading" style="color:#0096c7;">
+                <div class="heading" >
+                    Active
+                </div>
+                <div id="Active" class="live-value" >
+                    Loading<img src="/images/spinner-blue.gif" class="loading-anime">
+                </div>
+            </div>
+            <div class="Update-heading" style="color:#a1ff0a;">
+                <div class="heading" >
+                    Recovered
+                </div>
+                <div id="Recovered" class="live-value">
+                    Loading<img src="/images/spinner-green.gif" class="loading-anime">
+                </div>
+            </div>
+            <div class="Update-heading" style="color:#ff0000;">  
+                <div class="heading" >
+                    Deceased
+                </div>
+                <div id="Deceased" class="live-value" style="position: relative; left: 10px;" >
+                    Loading<img src="/images/spinner-red.gif" class="loading-anime">
+                </div>
+            </div>
+        </div>
+
+        <canvas id="myChart1" >
+
+        </canvas>
+        <canvas id="myChart2">
+
+        </canvas>
+
+        <div class="table-heading">
+            Tabular View...
+        </div>
+        <div class="input-field">
+            <input type="text" id="filter-for-Covid-cases" placeholder="Enter State for Quick Search.">
+            <button class="btn btn-primary" id="search-btn">Search</button>
+            <button class="btn btn-dark" id="cancel-btn"><i class="fas fa-times"></i></button>
+        </div>
+
+        <table  id="table-for-live-updates" border="5" cellpadding="3" cellspacing="5" class="table table-dark table-striped rounded-3 table-hover" >
+            <tr>
+                <th>State</th>
+                <th>Confirmed</th>
+                <th>Active</th>
+                <th>Recovered</th>
+                <th>Deceased</th>
+            </tr>
+        </table>
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.7.1/chart.min.js"></script>
+    <script type="text/javascript" src="/js/liveUpdates.js"></script>
+</body>
+</html>

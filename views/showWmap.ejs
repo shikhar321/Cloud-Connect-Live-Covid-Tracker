@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Trakcer | Cloud Connect</title>
+
+
+    <link rel="shorcut icon" type="image/x-icon" href="../images/fevion.png">
+    
+    
+    <script src="https://kit.fontawesome.com/22406f9d4d.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.min.js"></script>
+    <link href="https://cdn.staticaly.com/gh/hung1001/font-awesome-pro/4cac1a6/css/all.css" rel="stylesheet" type="text/css"/>
+    <link href="https://cdn.jsdelivr.net/gh/StephanWagner/svgMap@v2.7.1/dist/svgMap.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" href="/css/user.css"> 
+    <link rel="stylesheet" type="text/css" href="/css/user-home.css"> 
+    <link rel="stylesheet" type="text/css" href="/css/showWmap.css"> 
+</head>
+<body>
+    <div class="header-for-user-profile">
+        <a id="Web-logo" href="/users/home-page">
+            <i class="fad fa-moon-cloud fa-4x" id="cloud-connect-logo" aria-hidden="true"></i>
+            <p id="cloud-connect-name">Cloud Connect.</p>
+        </a>
+        <p>
+            <a href="/users/home-page">
+                CloudConnect
+            </a>
+        </p>
+        <div>
+            <a href="/users/sign-out" >
+                <button class="sign-out-button">
+                    <i class="fas fa-sign-out"></i> &nbsp; Sign-Out 
+                </button>
+            </a>
+            <a href="/users/home-page" >
+                <button class="goto-home-button">
+                    <i class="fas fa-home"></i>&nbsp; Home 
+                </button>
+            </a>
+        </div>
+    </div>
+    <div id="svgMap">
+
+    </div>
+    <%- include("asideSection")-%>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/svg-pan-zoom@3.6.1/dist/svg-pan-zoom.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/StephanWagner/svgMap@v2.7.1/dist/svgMap.min.js"></script>
+    <script type="text/javascript" src="/js/showWmap.js"></script>
+</body>
+</html>
